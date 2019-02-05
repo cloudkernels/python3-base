@@ -10,3 +10,7 @@ RUN git clone https://github.com/bchalios/rumprun-packages.git \
 WORKDIR rumprun-packages/python3
 RUN make -f makefile python.spt
 RUN make -f makefile python.hvt
+RUN cp -r python.spt python.hvt ./build /opt
+RUN rm -rf /tmp/rumprun-packages
+
+WORKDIR /opt
